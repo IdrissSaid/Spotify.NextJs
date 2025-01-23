@@ -11,10 +11,11 @@ type MixContextType = {
 const MixContext = createContext<MixContextType | undefined>(undefined);
 
 export const MixProvider = ({ children }: { children: ReactNode }) => {
-	const [selectedMix, setSelectedMix] = useState<PlaylistInterface | undefined>(() => {
-		const savedMix = localStorage.getItem('selectedMix');
-		return savedMix ? JSON.parse(savedMix) : undefined;
-	});
+	const [selectedMix, setSelectedMix] = useState<PlaylistInterface | undefined>();
+	// 	() => {
+	// 	const savedMix = localStorage.getItem('selectedMix');
+	// 	return savedMix ? JSON.parse(savedMix) : undefined;
+	// }
 
 	useEffect(() => {
 		if (selectedMix) {
@@ -26,9 +27,7 @@ export const MixProvider = ({ children }: { children: ReactNode }) => {
 	}, [selectedMix]);
 
 	return (
-		<MixContext.Provider value={{ selectedMix, setSelectedMix }}>
-			{children}
-		</MixContext.Provider>
+		<MixContext.Provider value={{ selectedMix, setSelectedMix }}>{children}</MixContext.Provider>
 	);
 };
 

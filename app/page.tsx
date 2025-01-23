@@ -7,7 +7,6 @@ import { useMixContext } from '@/components/MixProvider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import PlaylistInterface from '@/constant/PlaylistInterface';
-import React from 'react';
 
 export default function Home() {
 	const filters = ['Tout', 'Musique', 'Podcasts', 'Livres audio'];
