@@ -4,7 +4,7 @@ import PlaylistInterface from '@/constant/PlaylistInterface';
 import { PlaylistCard } from './PlaylistCard';
 import Link from 'next/link';
 
-export const PlaylistsVertical = ({
+export const PlaylistsHorizontal = ({
 	playlists,
 	title,
 }: {
@@ -19,9 +19,7 @@ export const PlaylistsVertical = ({
 					className='scroll-m-20 m-2 hover:underline text-xl font-semibold tracking-tight'>
 					{title}
 				</Link>
-				<Link
-					href={'#'}
-					className='m-2 hover:underline text-sm text-muted-foreground'>
+				<Link href={'#'} className='m-2 hover:underline text-sm text-muted-foreground'>
 					Tout afficher
 				</Link>
 			</div>

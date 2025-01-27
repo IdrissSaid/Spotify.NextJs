@@ -1,11 +1,12 @@
 /** @format */
 
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/dbConnect';
 import Playlist from '@/Model/Playlist';
 
-export async function GET(req: NextRequest) {
+export async function GET() {
 	await dbConnect();
+
 	try {
 		const playlists = await Playlist.find({ users: '67889115618c9e97c69913c8' });
 
@@ -16,8 +17,9 @@ export async function GET(req: NextRequest) {
 	}
 }
 
-export async function POST(req: NextRequest) {
+export async function POST() {
 	await dbConnect();
+
 	try {
 		const playlist = new Playlist({
 			name: 'Playlist',

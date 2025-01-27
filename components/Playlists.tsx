@@ -1,5 +1,5 @@
 /** @format */
-
+'use client';
 import PlaylistInterface from '@/constant/PlaylistInterface';
 import Image from 'next/image';
 

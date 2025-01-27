@@ -2,7 +2,7 @@
 'use client';
 
 import { Filter } from '@/components/Filter';
-import { PlaylistsVertical } from '@/components/PlaylistVertical';
+import { PlaylistsHorizontal } from '@/components/PlaylistVertical';
 import { useMixContext } from '@/components/MixProvider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -13,7 +13,7 @@ export default function Home() {
 	const playlists: PlaylistInterface[] = [
 		{
 			name: 'Daily Mix O1',
-			image: 'https://picsum.photos/370',
+			image: 'https://random.imagecdn.app/370/370',
 			type: 'playlist',
 			listening: false,
 			tracks: [
@@ -25,7 +25,7 @@ export default function Home() {
 					release_date: Date.now().toString(),
 					duration: 5000,
 					src: '',
-					image: 'https://picsum.photos/370',
+					image: 'https://random.imagecdn.app/370/370',
 					liked: true,
 					listening: false,
 				},
@@ -37,7 +37,7 @@ export default function Home() {
 					release_date: Date.now().toString(),
 					duration: 5000,
 					src: '',
-					image: 'https://picsum.photos/370',
+					image: 'https://random.imagecdn.app/370/370',
 					liked: true,
 					listening: false,
 				},
@@ -49,7 +49,7 @@ export default function Home() {
 					release_date: Date.now().toString(),
 					duration: 5000,
 					src: '',
-					image: 'https://picsum.photos/370',
+					image: 'https://random.imagecdn.app/370/370',
 					liked: true,
 					listening: false,
 				},
@@ -59,7 +59,7 @@ export default function Home() {
 	const albums: PlaylistInterface[] = [
 		{
 			name: 'QALF infinity',
-			image: 'https://picsum.photos/370',
+			image: 'https://random.imagecdn.app/370/370',
 			type: 'album',
 			listening: false,
 			tracks: [
@@ -71,7 +71,7 @@ export default function Home() {
 					release_date: Date.now().toString(),
 					duration: 5000,
 					src: '',
-					image: 'https://picsum.photos/370',
+					image: 'https://random.imagecdn.app/370/370',
 					liked: true,
 					listening: false,
 				},
@@ -83,7 +83,7 @@ export default function Home() {
 					release_date: Date.now().toString(),
 					duration: 5000,
 					src: '',
-					image: 'https://picsum.photos/370',
+					image: 'https://random.imagecdn.app/370/370',
 					liked: true,
 					listening: false,
 				},
@@ -95,8 +95,8 @@ export default function Home() {
 		<Card className='bg-card p-2 w-full h-full'>
 			<CardContent>
 				<Filter filters={filters} />
-				<PlaylistsVertical playlists={playlists} title='Couçu spécialement pour vous' />
-				<PlaylistsVertical playlists={albums} title='Recommandations du jour' />
+				<PlaylistsHorizontal playlists={playlists} title='Couçu spécialement pour vous' />
+				<PlaylistsHorizontal playlists={albums} title='Recommandations du jour' />
 				<Button onClick={() => setSelectedMix(albums[0])}>Select this Mix NOW</Button>
 				{selectedMix && (
 					<Button
