@@ -2,9 +2,11 @@
 'use client';
 
 import { usePlaylist } from '@/components/usePlaylist';
+import { use } from 'react';
 
-export default function PlaylistPage() {
-	const { playlist, isLoading, error } = usePlaylist({ id: '678906481a1f4455018120a4' });
+export default function PlaylistPage({ params }: { params: Promise<{ id: string }> }) {
+	const { id } = use(params);
+	const { playlist, isLoading, error } = usePlaylist({ id: id });
 
 	if (error)
 		return <div className='w-full h-full flex justify-center items-center'>Failed to load</div>;
